@@ -1,0 +1,16 @@
+import pickle
+history = pickle.load(open("history.sav","rb"))
+import matplotlib.pyplot as plt
+plt.title("Training vs validation Accuracy")
+plt.plot(history.history["accuracy"],"bo",label="Train_acc")
+plt.plot(history.history["val_accuracy"],"b",label="val_acc")
+plt.xlabel("epochs")
+plt.ylabel("accuracy")
+plt.legend()
+plt.show()
+plt.plot(history.history["loss"],"bo",label="train_loss")
+plt.plot(history.history["val_loss"],"b",label="val_loss")
+plt.xlabel("epochs")
+plt.ylabel("loss")
+plt.legend()
+plt.show()
